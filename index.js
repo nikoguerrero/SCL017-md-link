@@ -10,8 +10,10 @@ const init = () => {
     if (isArgMdFile(filePath)) {
       console.log('cargaste un archivo md');
       readMDContent(filePath);
+    } else if (isArgDir(filePath)) {
+      console.log('es un directorio');
     } else {
-      console.log('no es un archivo mark down');
+      console.log('no es un archivo válido');
     }
     process.exit(1);
   }
@@ -24,6 +26,18 @@ const isArgMdFile = (filePath) => {
   // if (fileExt === mdExt) {
   //   console.log('cargaste un archivo md');
   // }
+};
+
+const isArgDir = (filePath) => {
+  // fs.stat(filePath, (error, stats) => {
+  //   if (error) {
+  //     console.error(error);
+  //     return;
+  //   }
+  //   return stats.isDirectory();
+  // });
+  const stats = fs.statSync(filePath);
+  return stats.isDirectory();
 };
 
 const readMDContent = (filePath) => {
