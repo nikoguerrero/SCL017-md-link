@@ -1,8 +1,4 @@
-// module.exports = () => {
-  
-// };
-const fs = require('fs');
-const path = require('path');
+const { isArgMdFile, isArgDir, readMDContent, findFiles } = require('./lib/md-links')
 
 const init = () => {
   if (process.argv.length > 2) {
@@ -12,6 +8,7 @@ const init = () => {
       readMDContent(filePath);
     } else if (isArgDir(filePath)) {
       console.log('es un directorio');
+      findFiles(filePath)
     } else {
       console.log('no es un archivo válido');
     }
@@ -19,30 +16,5 @@ const init = () => {
   }
 };
 
-const isArgMdFile = (filePath) => {
-  const fileExt = path.extname(filePath);
-  const mdExt = '.md';
-  return fileExt === mdExt;
-  // if (fileExt === mdExt) {
-  //   console.log('cargaste un archivo md');
-  // }
-};
-
-const isArgDir = (filePath) => {
-  // fs.stat(filePath, (error, stats) => {
-  //   if (error) {
-  //     console.error(error);
-  //     return;
-  //   }
-  //   return stats.isDirectory();
-  // });
-  const stats = fs.statSync(filePath);
-  return stats.isDirectory();
-};
-
-const readMDContent = (filePath) => {
-  const file = fs.readFileSync(filePath, 'utf8');
-  console.log(file);
-};
-
 init();
+
