@@ -8,7 +8,6 @@ describe('isArgMdFile', () => {
 
   it('should return a boolean', () => {
     const result = isArgMdFile('text.md');
-    console.log(isArgMdFile.toString());
     expect(typeof result === 'boolean').toBeTruthy();
   });
 });
