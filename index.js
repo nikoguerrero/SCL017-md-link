@@ -2,8 +2,8 @@ const { isDirOrMd } = require('./lib/md-links');
 const path = require('path');
 
 const init = () => {
-  if (process.argv.length > 2) {
-    const userArgs = process.argv;
+  const userArgs = process.argv;
+  if (userArgs.length > 2) {
     const filePath = userArgs[2].toLowerCase();
     const absolutePath = path.resolve(filePath);
     const options = {
@@ -18,9 +18,9 @@ const init = () => {
         options.showStats = true;
       }
     }
-    console.log(userArgs);
+    console.log(options);
     try { // exceptions handling
-      isDirOrMd(absolutePath);
+      isDirOrMd(absolutePath, options);
     } catch (e) {
       console.log(e);
     }
