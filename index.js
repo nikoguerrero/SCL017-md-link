@@ -3,20 +3,22 @@ const path = require('path');
 
 const init = () => {
   if (process.argv.length > 2) {
-    const filePath = process.argv[2].toLowerCase();
+    const userArgs = process.argv;
+    const filePath = userArgs[2].toLowerCase();
     const absolutePath = path.resolve(filePath);
-    const options = process.argv;
-    let validate = false;
-    let showStats = false;
+    const options = {
+      validate: false,
+      showStats: false
+    };
 
-    for (let index = 3; index < options.length; index++) {
-      if (options[index].toLowerCase() === '--validate') {
-        validate = true;
-      } else if (options[index].toLowerCase() === '--stats') {
-        showStats = true;
+    for (let index = 3; index < userArgs.length; index++) {
+      if (userArgs[index].toLowerCase() === '--validate') {
+        options.validate = true;
+      } else if (userArgs[index].toLowerCase() === '--stats') {
+        options.showStats = true;
       }
     }
-    console.log(options);
+    console.log(userArgs);
     try { // exceptions handling
       isDirOrMd(absolutePath);
     } catch (e) {
