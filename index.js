@@ -18,7 +18,6 @@ const init = () => {
         options.showStats = true;
       }
     }
-    console.log(options);
     try { // exceptions handling
       isDirOrMd(absolutePath, options);
     } catch (e) {
