@@ -2,6 +2,16 @@ const { isDirOrMd } = require('./lib/md-links');
 const path = require('path');
 
 const init = () => {
+  // var log = console.log;
+  // console.log = function() {
+  //   log.apply(console, arguments);
+  //   console.trace();
+  // };
+  // function findConsole() {
+  //   console.log('[]');
+  // };
+
+  // findConsole();
   const userArgs = process.argv;
   if (userArgs.length > 2) {
     const filePath = userArgs[2].toLowerCase();
