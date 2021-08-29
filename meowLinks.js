@@ -30,6 +30,8 @@ const init = () => {
               ${asciiArt[Math.floor(Math.random() * asciiArt.length)]}
         `);
         console.log('\n');
+      }).catch((error) => {
+        console.log('wrong file or directory!' + absolutePath);
       });
     // try { // exceptions handling
     //   isDirOrMd(absolutePath, options);
@@ -44,7 +46,6 @@ const init = () => {
 };
 
 init();
-
 
 module.exports = {
   init
