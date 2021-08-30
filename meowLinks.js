@@ -25,16 +25,16 @@ const init = () => {
         console.log('\n');
         results.forEach(element => {
           if (!options.validate && !options.showStats) {
-            console.log(element.href, element.text, element.file, element.line);
+            console.log(element.href, element.text, element.line, element.file);
           } else if (options.validate && !options.showStats) {
-            console.log(element.href, element.text, element.file, element.line, element.status, element.ok)
+            console.log(element.href, element.text, element.line, element.file, element.status, element.ok)
           } else if (!options.validate && options.showStats) {
             console.log(`Total: ${element.total}`, `Unique: ${element.unique}`);
           } else if (options.validate && options.showStats){
             console.log(`Total: ${element.total}`, `Unique: ${element.unique}`, `Broken: ${element.broken}`);
           } 
         });
-        console.log(results);
+        // console.log(results);
         console.log(`
                   here are your results
                   meow :3
