@@ -1,4 +1,4 @@
-const { init } = require('../index.js');
+const { init } = require('../meowLinks.js');
 
 describe('init', () => {
 
