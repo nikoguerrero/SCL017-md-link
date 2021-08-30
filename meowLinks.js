@@ -23,17 +23,17 @@ const init = () => {
     meowDownLinks(absolutePath, options)
       .then((results) => {
         console.log('\n');
-        // results.forEach(element => {
-        //   if (!options.validate && !options.showStats) {
-        //     console.log(element.href, element.text, element.file, element.line);
-        //   } else if (options.validate && !options.showStats) {
-        //     console.log(element.href, element.text, element.file, element.line, element.status, element.ok)
-        //   } else if (!options.validate && options.showStats) {
-        //     console.log(`Total: ${element.total}`, `Unique: ${element.unique}`);
-        //   } else if (options.validate && options.showStats){
-        //     console.log(`Total: ${element.total}`, `Unique: ${element.unique}`, `Broken: ${element.broken}`);
-        //   } 
-        // });
+        results.forEach(element => {
+          if (!options.validate && !options.showStats) {
+            console.log(element.href, element.text, element.file, element.line);
+          } else if (options.validate && !options.showStats) {
+            console.log(element.href, element.text, element.file, element.line, element.status, element.ok)
+          } else if (!options.validate && options.showStats) {
+            console.log(`Total: ${element.total}`, `Unique: ${element.unique}`);
+          } else if (options.validate && options.showStats){
+            console.log(`Total: ${element.total}`, `Unique: ${element.unique}`, `Broken: ${element.broken}`);
+          } 
+        });
         console.log(results);
         console.log(`
                   here are your results
