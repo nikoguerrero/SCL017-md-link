@@ -31,7 +31,8 @@ const init = () => {
         `);
         console.log('\n');
       }).catch((error) => {
-        console.log('wrong file or directory!' + absolutePath);
+        console.log(error.message);
+        //console.log('wrong file or directory!' + absolutePath);
       });
     // try { // exceptions handling
     //   isDirOrMd(absolutePath, options);
