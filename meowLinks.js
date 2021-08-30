@@ -23,7 +23,17 @@ const init = () => {
     meowDownLinks(absolutePath, options)
       .then((results) => {
         console.log('\n');
-        console.log(results);
+        results.forEach(element => {
+          if (!options.validate && !options.showStats) {
+            console.log(element.href, element.text, element.file, element.line);
+          } else if (options.validate && !options.showStats) {
+            console.log(element.href, element.text, element.file, element.line, element.status, element.ok)
+          } else if (!options.validate && options.showStats) {
+            console.log(`Total: ${element.total}`, `Unique: ${element.unique}`);
+          } else if (options.validate && options.showStats){
+            console.log(`Total: ${element.total}`, `Unique: ${element.unique}`, `Broken: ${element.broken}`);
+          } 
+        });
         console.log(`
                   here are your results
                   meow :3
@@ -32,17 +42,7 @@ const init = () => {
         console.log('\n');
       }).catch((error) => {
         console.log(error.message);
-        //console.log('wrong file or directory!' + absolutePath);
       });
-    // try { // exceptions handling
-    //   isDirOrMd(absolutePath, options);
-    // } catch (e) {
-    //   console.log(e);
-    // }
-    // mdLinks(absolutePath, options)
-    // .then(file => {
-    //   console.log(file);
-    // }).catch(error => console.log(error));
   }
 };
 
