@@ -1,4 +1,4 @@
-const { isArgMdFile, isArgDir, getMDLinks } = require('../lib/meowLib.js');
+const { isArgMdFile, isArgDir, getMDLinks } = require('../lib/mdfunctions.js');
 
 describe('isArgMdFile', () => {
   it('should be a function', () => {

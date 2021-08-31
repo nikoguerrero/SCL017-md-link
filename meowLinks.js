@@ -1,4 +1,4 @@
-const { meowDownLinks } = require('./lib/meowLib');
+const { meowDownLinks } = require('./lib/meow-down-links');
 const { asciiArt } = require('./bin/asciiArt')
 const path = require('path');
 
@@ -29,9 +29,9 @@ const init = () => {
           } else if (options.validate && !options.showStats) {
             console.log(element.href, element.text, element.line, element.file, element.status, element.ok)
           } else if (!options.validate && options.showStats) {
-            console.log(`Total: ${element.total}`, `Unique: ${element.unique}`);
+            console.log(`Total: ${element.total}, Unique: ${element.unique}`);
           } else if (options.validate && options.showStats){
-            console.log(`Total: ${element.total}`, `Unique: ${element.unique}`, `Broken: ${element.broken}`);
+            console.log(`Total: ${element.total}, Unique: ${element.unique}, Broken: ${element.broken}`);
           } 
         });
         // console.log(results);
