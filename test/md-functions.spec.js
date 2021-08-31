@@ -1,4 +1,4 @@
-const { isArgMdFile, isArgDir, getMDLinks } = require('../lib/mdfunctions.js');
+const { isArgMdFile, isArgDir, getMDLinks } = require('../lib/md-functions');
 
 describe('isArgMdFile', () => {
   it('should be a function', () => {

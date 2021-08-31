@@ -19,30 +19,34 @@ if (userArgs.length > 2) {
     }
   }
 
-  meowDownLinks(absolutePath, options)
-    .then((results) => {
-      console.log('\n');
-      results.forEach(element => {
-        const basicInfo = `Href: ${element.href}` + '\n' + `Text: ${element.text}` + '\n' + `Line: ${element.line}` +'\n' + `Path: ${element.file}` + '\n';
-        const basicStats = `Total: ${element.total}` + '\n' + `Unique: ${element.unique}` + '\n';
-        if (!options.validate && !options.showStats) {
-          console.log(basicInfo);
-        } else if (options.validate && !options.showStats) {
+meowDownLinks(absolutePath, options)
+  .then((results) => {
+    console.log('\n');
+    results.forEach(element => {
+      const basicInfo = `Href: ${element.href}` + '\n' + `Text: ${element.text}` + '\n' + `Line: ${element.line}` +'\n' + `Path: ${element.file}` + '\n';
+      const basicStats = `Total: ${element.total}` + '\n' + `Unique: ${element.unique}` + '\n';
+      if (!options.validate && !options.showStats) {
+        console.log(basicInfo);
+      } else if (options.validate && !options.showStats) {
+        if ('originalHref' in element) {
+          console.log(basicInfo + `Response status: ${element.status} (${element.ok})` + '\n' + `Redirected from: ${element.originalHref}` + '\n');
+        } else {
           console.log(basicInfo + `Response status: ${element.status} (${element.ok})` + '\n');
-        } else if (!options.validate && options.showStats) {
-          console.log(basicStats);
-        } else if (options.validate && options.showStats){
-          console.log(basicStats + `Broken: ${element.broken}`);
-        } 
-      });
-      // console.log(results);
-      console.log(`
-            here are your results
-            meow :3
-            ${asciiArt[Math.floor(Math.random() * asciiArt.length)]}
-      `);
-      console.log('\n');
-    }).catch((error) => {
-      console.log(error.message);
+        }
+      } else if (!options.validate && options.showStats) {
+        console.log(basicStats);
+      } else if (options.validate && options.showStats){
+        console.log(basicStats + `Broken: ${element.broken}`+ '\n' + `Redirected: ${element.redirected}`);
+      } 
     });
+    // console.log(results);
+    console.log(`
+          here are your results
+          meow :3
+          ${asciiArt[Math.floor(Math.random() * asciiArt.length)]}
+    `);
+    console.log('\n');
+  }).catch((error) => {
+    console.log(error.message);
+  });
 }
