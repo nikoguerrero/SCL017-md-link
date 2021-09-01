@@ -25,13 +25,13 @@ meowDownLinks(absolutePath, options)
     results.forEach(element => {
       const basicInfo = `Href: ${element.href}` + '\n' + `Text: ${element.text}` + '\n' + `Line: ${element.line}` +'\n' + `Path: ${element.file}` + '\n';
       const basicStats = `\x1b[32m Total:  ${element.total}\x1b[0m` + '\n' + `\x1b[32m Unique: ${element.unique}\x1b[0m` + '\n';
-      const advanceInfo = basicInfo +  `Response status: ${element.status} (${element.ok})` + '\n' + `Redirected from: ${element.originalHref}` + '\n';
+      const advanceInfo = basicInfo +  `Response status: ${element.status} (${element.ok})` + '\n';
       const advanceStats = basicStats + `\x1b[31m Broken: ${element.broken}\x1b[0m`+ '\n' + `\x1b[36m Redirected: ${element.redirected}\x1b[0m`;
       if (!options.validate && !options.showStats) {
         console.log(basicInfo);
       } else if (options.validate && !options.showStats) {
         if ('originalHref' in element) {
-          console.log('\x1b[36m' + advanceInfo + '\x1b[0m');
+          console.log('\x1b[36m' + advanceInfo  + 'Redirected from: ' + element.originalHref  + '\x1b[0m' + '\n');
         } else if(element.status === 404) {
           console.log('\x1b[31m' + advanceInfo + '\x1b[0m');
         } else {
