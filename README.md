@@ -16,7 +16,7 @@ meowdown-links is a library tool for extracting and validating markdown links.
 ## Installation
 Current release requires Node.js
 
-` npm install --save meowdown-links`
+` npm install meowdown-links`
 
 ## CLI Usage
 

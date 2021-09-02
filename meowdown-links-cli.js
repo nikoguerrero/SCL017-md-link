@@ -11,8 +11,7 @@ if (userArgs.length > 2) {
   const options = {
     validate: false,
     showStats: false
-  };
-
+  }
   for (let index = 3; index < userArgs.length; index++) {
     if (userArgs[index].toLowerCase() === '--validate') {
       options.validate = true;
