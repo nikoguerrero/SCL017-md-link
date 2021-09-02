@@ -1,8 +1,8 @@
-# MeowDown Links :cat:
+# Meowdown Links :cat:
 
 ## Índice
 
-* [MeowDown Links](#meowdown-links)
+* [Meowdown Links](#meowdown-links)
 * [Installation](#installation)
 * [CLI Usage](#cli-usage)
 * [Library Usage](#library-usage)
@@ -10,18 +10,18 @@
 
 ***
 
-## MeowDown Links
+## Meowdown Links
 meowdown-links is a library tool for extracting and validating markdown links.
 
 ## Installation
 Current release requires Node.js
 
-` npm install meowdown-links`
+` npm install -g meowdown-links`
 
 ## CLI Usage
 
 ```
-$ node meow-links.js ./path/to/file.md
+$ meowdown-links ./path/to/file.md
 ```
 
 
@@ -56,7 +56,7 @@ meowDownLinks('./folder/text.md', { validate: true })
 
 meowDownLinks('./folder/dir')
   .then(results => {
-    // results => [{ href, text, file }, ...]
+    // results => [{ href, text, file, status, ok, originalHref }]
   })
   .catch(error => {
     console.log(error.message);
