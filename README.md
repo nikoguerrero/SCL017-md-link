@@ -8,7 +8,6 @@
 * [Configuration](#configuration)
 * [Optional arguments](#optional-argumetns)
 * [Exceptions](#exceptions)
-* [Workflow diagram](#workflow-diagram)
 
 ***
 
@@ -90,6 +89,3 @@ Broken URLs are red.
 Redirected URLs are cyan.
 
 The message also includes a random ASCII cat art drawing.
-
-
-## Workflow diagram
