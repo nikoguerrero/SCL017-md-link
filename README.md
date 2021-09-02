@@ -1,12 +1,11 @@
-# MeowDown Links
+# MeowDown Links :cat:
 
 ## Índice
 
 * [Meow-Down Links](#meow-down-links)
 * [Installation](#installation)
-* [Usage](#usage)
-* [Configuration](#configuration)
-* [Optional arguments](#optional-argumetns)
+* [CLI Usage](#cli-usage)
+* [Library Usage](#library-usage)
 * [Exceptions](#exceptions)
 
 ***
@@ -36,7 +35,7 @@ $ node meowLinks.js ./path/to/file.md
 ## Library Usage
 
 Library usage example:
-```
+```js
 const meowDownLinks = require('meowDownLinks');
 
 meowDownLinks('./text.md')
@@ -64,7 +63,7 @@ meowDownLinks('./folder/dir')
   });
 
 ```
-## API Reference
+### API Reference
 
 meowDownLinks(path, options)
 
@@ -79,13 +78,17 @@ meowDownLinks(path, options)
 
 ## Exceptions
 
-Is important to remember this library will only extract and validate urls to webpages. MD images are not supported.
+Is important to remember this library will only extract and validate urls to webpages. **MD images are not supported**.
 
 ## Special feature
 
-CLI messages are personalized.
-Working URLs are green.
-Broken URLs are red.
-Redirected URLs are cyan.
+CLI messages are **personalized**.
+- Working URLs are green.
+- Broken URLs are red.
+- Originally redirected URLs are cyan.
 
 The message also includes a random ASCII cat art drawing.
+
+#### Example:
+
+![cliexample](https://user-images.githubusercontent.com/83680798/131762902-dc8a3800-bbe2-498b-95f1-475132c579bc.png)
