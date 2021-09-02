@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const { meowDownLinks } = require('./lib/meowdown-links');
-const { asciiArt } = require('./bin/asciiArt')
+const { asciiArt } = require('./data/asciiArt')
 const path = require('path');
 
 const userArgs = process.argv;
