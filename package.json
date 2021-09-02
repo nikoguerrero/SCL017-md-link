@@ -2,13 +2,14 @@
   "name": "meowdown-links",
   "version": "0.1.0",
   "description": "Markdown link extractor and validator",
-  "main": "meowLinks.js",
+  "main": "meow-links.js",
   "directories": {
+    "lib": "lib",
     "test": "test"
   },
   "scripts": {
     "test": "jest",
-    "pretest": "eslint ."
+    "eslint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -28,5 +29,8 @@
   "devDependencies": {
     "eslint": "^7.32.0",
     "jest": "^27.1.0"
+  },
+  "bin": {
+    "meowdown-links": "meow-links.js"
   }
 }

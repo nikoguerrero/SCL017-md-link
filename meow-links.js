@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const { meowDownLinks } = require('./lib/meowdown-links');
 const { asciiArt } = require('./bin/asciiArt')
 const path = require('path');
@@ -22,7 +24,7 @@ if (userArgs.length > 2) {
 meowDownLinks(absolutePath, options)
   .then((results) => {
       console.log('\n');
-    results.forEach(element => {
+      results.forEach(element => {
       const basicInfo = `Href: ${element.href}` + '\n' + `Text: ${element.text}` + '\n' + `Line: ${element.line}` +'\n' + `Path: ${element.file}` + '\n';
       const basicStats = `\x1b[32m Total:  ${element.total}\x1b[0m` + '\n' + `\x1b[32m Unique: ${element.unique}\x1b[0m` + '\n';
       const advanceInfo = basicInfo +  `Response status: ${element.status} (${element.ok})` + '\n';
