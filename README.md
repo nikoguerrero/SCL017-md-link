@@ -1,6 +1,6 @@
 # Meowdown Links :cat:
 
-## Índice
+## Index
 
 * [Meowdown Links](#meowdown-links)
 * [Installation](#installation)
